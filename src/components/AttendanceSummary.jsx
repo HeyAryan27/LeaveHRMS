@@ -5,7 +5,9 @@ const AttendanceSummary = () => {
     return (
         <div className="col-span-1 w-auto  lg:w-auto bg-white p-6   rounded-lg lg:h-80 shadow-md border-[1px]">
         <div className="flex justify-between items-center ">
-          <h2 className="font-semibold text-lg">Timing</h2>
+          <h2 className="font-semibold text-lg">Timing
+          <p className="text-xs text-gray-600 mt-2  md:-mt-5">From 4-10 Sept,2023</p>
+          </h2>
           <div className="relative w-full md:w-auto">
           <select className="block appearance-none w-full md:w-auto py-2 px-3 border border-gray-300 bg-white text-gray-700 text-xs rounded-lg focus:outline-none">
             <option>This Week</option>
@@ -19,6 +21,15 @@ const AttendanceSummary = () => {
         </div>
         </div>
         <BarAnimation/>
+        <div>
+          <ul className='flex ml-28'>
+            <li className="flex justify-between items-center py-2">
+            <span className="w-2.5 h-3 rounded-full bg-blue-500 mr-2"></span>Last Week</li>
+            <li className="flex justify-between items-center py-2 ml-4">
+            <span className="w-2.5 h-3 rounded-full bg-blue-300 mr-2"></span>This Week</li>
+          </ul>
+        </div>
+        
       
 
   

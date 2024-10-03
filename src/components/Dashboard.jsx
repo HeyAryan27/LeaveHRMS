@@ -5,6 +5,8 @@ import MyTeam from './MyTeam';
 import Attendance from './Attendance';
 import AttendanceSummary from './AttendanceSummary';
 import WorkingHistory from './WorkingHistory';
+import Totalteam from './Totalteam';
+import TeamList from './Teamlist';
 
 const Dashboard = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
@@ -57,12 +59,14 @@ const Dashboard = () => {
         </div>
       </div>
       
-      <div className="grid grid-cols-1 lg:grid-cols-2  gap-4 mt-4">
+      <div className="grid grid-cols-1 lg:grid-cols-2  gap-8 mt-4">
         <div className="flex-1">
           <MyTeam />
+    
         </div>
-        <div className="flex-1">
-          {/* <WorkingHistory /> */}
+        <div className="flex-1 ">
+          <WorkingHistory />  
+          <Totalteam/>
         </div>
       </div>
       
