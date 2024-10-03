@@ -20,12 +20,12 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
         </Link>
         <li className="px-4 py-4 hover:bg-gray-200 flex flex-col items-center cursor-pointer">
           <FiUsers size={24} className="text-gray-600 mb-1" />
-          <span className="text-gray-600">Org.</span>
+          <span className="text-gray-600">User</span>
         </li>
         <Link to="calendar" className="no-underline">
           <li className="px-4 py-4 hover:bg-gray-200 flex flex-col items-center cursor-pointer">
             <FiCalendar size={24} className="text-gray-600 mb-1" />
-            <span className="text-gray-600">Calendar</span>
+            <span className="text-gray-600">Checklist</span>
           </li>
         </Link>
         <li className="px-4 py-4 hover:bg-gray-200 flex flex-col items-center cursor-pointer">

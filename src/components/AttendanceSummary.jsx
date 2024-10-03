@@ -1,7 +1,8 @@
-import { dashboardData } from '../utils/constant'; 
+
 import BarAnimation from './Charts';
+import { Hours } from '../utils/constant'; 
 const AttendanceSummary = () => {
-    const data = dashboardData; 
+    
     return (
         <div className="col-span-1 w-auto  lg:w-auto bg-white p-6   rounded-lg lg:h-80 shadow-md border-[1px]">
         <div className="flex justify-between items-center ">
@@ -24,9 +25,9 @@ const AttendanceSummary = () => {
         <div>
           <ul className='flex ml-28'>
             <li className="flex justify-between items-center py-2">
-            <span className="w-2.5 h-3 rounded-full bg-blue-500 mr-2"></span>Last Week</li>
+            <span className="w-2.5 h-3 rounded-full bg-blue-500 mr-2"></span>This Week</li>
             <li className="flex justify-between items-center py-2 ml-4">
-            <span className="w-2.5 h-3 rounded-full bg-blue-300 mr-2"></span>This Week</li>
+            <span className="w-2.5 h-3 rounded-full bg-blue-300 mr-2"></span>Last Week</li>
           </ul>
         </div>
         

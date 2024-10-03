@@ -6,7 +6,6 @@ import Attendance from './Attendance';
 import AttendanceSummary from './AttendanceSummary';
 import WorkingHistory from './WorkingHistory';
 import Totalteam from './Totalteam';
-import TeamList from './Teamlist';
 
 const Dashboard = () => {
   const [currentTime, setCurrentTime] = useState(new Date());

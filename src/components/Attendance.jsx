@@ -5,11 +5,10 @@ const Attendance = () => {
 
   
   const getStrokeDashOffset = (percentage) => {
-    const radius = 36;
+    const radius = 39;
     const circumference = 2 * Math.PI * radius;
     return circumference - (percentage / 100) * circumference;
   };
-
   return (
     <div className="col-span-1  w-full lg:w-fit   bg-white p-6 rounded-lg lg:h-80  xl:w-full shadow-md border-[1px]">
       <div className="flex justify-between items-center md:mb-4 -mb-2">
@@ -48,9 +47,9 @@ const Attendance = () => {
         
       
         <circle
-              className="text-green-500"
+              className="text-blue-500"
               strokeWidth="10"
-              strokeDasharray={`${(data.attendance.details.InOffice / 365) * 226} 226`}
+              strokeDasharray={`${(data.attendance.details.InOffice / 100) * 226} `}
               strokeDashoffset="0"
               strokeLinecap="round"
               stroke="blue"
@@ -60,41 +59,40 @@ const Attendance = () => {
               cy="40"
               transform="rotate(-90 40 40)"
             />
+       <circle
+  className="text-yellow-500"
+  strokeWidth="10"
+  strokeDasharray={`${(data.attendance.details.Halfday / 100) * 226} ${226 - (data.attendance.details.Halfday / 100)}`}
+  strokeDashoffset={getStrokeDashOffset(data.attendance.details.InOffice)}
+  strokeLinecap="round"
+  stroke="currentColor"
+  fill="transparent"
+  r="36"
+  cx="40"
+  cy="40"
+  transform="rotate(-90 40 40)"
+/>
         
-      
-        <circle
-              className="text-yellow-500"
-              strokeWidth="10"
-              strokeDasharray={`${(data.attendance.details.Halfday / 365) * 226} ${226 - (data.attendance.details.Halfday / 365) * 226}`}
-              strokeDashoffset={`${226 - (data.attendance.details.InOffice / 365) * 226}`}
-              strokeLinecap="round"
-              stroke="currentColor"
-              fill="transparent"
-              r="36"
-              cx="40"
-              cy="40"
-              transform="rotate(-90 40 40)"
-            />
-        
-  
-        <circle
-              className="text-red-500"
-              strokeWidth="10"
-              strokeDasharray={`${(data.attendance.details.Workfromhome / 365) * 226} ${226 - (data.attendance.details.Workfromhome / 365) * 226}`}
-              strokeDashoffset={`${185 - (data.attendance.details.Halfday / 365) * 226}`}
-              strokeLinecap="round"
-              stroke="currentColor"
-              fill="transparent"
-              r="36"
-              cx="40"
-              cy="40"
-            />
+   
+<circle
+  className="text-red-500"
+  strokeWidth="10"
+  strokeDasharray={`${(data.attendance.details.Workfromhome / 100) * 226} ${226 - (data.attendance.details.Workfromhome / 100)}`}
+  strokeDashoffset={getStrokeDashOffset(data.attendance.details.InOffice) + getStrokeDashOffset(data.attendance.details.Halfday)}
+  strokeLinecap="round"
+  stroke="currentColor"
+  fill="transparent"
+  r="36"
+  cx="40"
+  cy="40"
+  transform="rotate(-90 40 40)"
+/>
         
         <circle
               className="text-gray-500"
               strokeWidth="10"
-              strokeDasharray={`${(data.attendance.details.Onleave / 365) * 226} ${226 - (data.attendance.details.Onleave / 365) * 226}`}
-              strokeDashoffset={`${156 - (data.attendance.details.Workfromhome / 365) * 226}`}
+              strokeDasharray={`${(data.attendance.details.Onleave / 100)} ${226 - (data.attendance.details.Onleave / 100)}`}
+              strokeDashoffset={`${156 - (data.attendance.details.Workfromhome / 100)}`}
               strokeLinecap="round"
               stroke="currentColor"
               fill="transparent"

@@ -13,7 +13,7 @@ function Totalteam() {
   };
 
   return (
-    <div className="bg-white p-4 h-56 mt-3 rounded-lg shadow-md   lg:ml-52   border-[1px]">
+    <div className="bg-white p-4 h-auto mt-4  rounded-lg shadow-md   lg:ml-52   border-[1px]">
       <div className="flex flex-col md:flex-row justify-between items-center mb-4">
         <div className="mb-4 md:mb-0">
           <h2 className="font-semibold text-lg   md:text-left">Total Team Member</h2>
