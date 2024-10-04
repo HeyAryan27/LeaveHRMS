@@ -3,6 +3,7 @@ import { BarChart } from '@mui/x-charts/BarChart';
 import { hours } from '../utils/constant';
 export default function ChartsOverviewDemo() {
   // const Atul =  <img alt="Profile picture of Alena Gouse" height="40" src="https://storage.googleapis.com/a1aa/image/ssItUqqvrV5ffEelR9eLu0RrYFGjTEpeLepyLqKKfvwRepfFnA.jpg" width="40"/>
+  // const Atul =   <img alt="Profile picture of Alena Gouse" height="40" src="https://png.pngtree.com/thumb_back/fh260/background/20230527/pngtree-cartoon-of-a-young-woman-smiling-on-a-black-background-image_2680954.jpg" width="40"/>
   return (
     <BarChart
     
@@ -23,7 +24,7 @@ export default function ChartsOverviewDemo() {
             (hours.ThisWeek.Hira)] }
       ]}
       height={200}
-      xAxis={[{ data: ['Atul', 'Nitin', 'Ani', 'Golu','kaku','Raju','Hira'], scaleType: 'band' }]}
+      xAxis={[{ data: ["Atul", 'Nitin', 'Ani', 'Golu','kaku','Raju','Hira'], scaleType: 'band' }]}
       margin={{ top: 10, bottom: 30, left: 40, right: 10 }}
     />
   );

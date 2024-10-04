@@ -3,7 +3,7 @@ import * as React from "react";
 
 import { PieChart, Pie, Cell } from "recharts";
 
-const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
+const COLORS = ["#0088FE", "#f00", "#FFBB28", "#a9a9a9"];
 
 const MyTeams = () => {
   const data = dashboardData;
@@ -52,9 +52,9 @@ const MyTeams = () => {
         </div>
 
         {/* Center Text (Percentage) */}
-        <div className="absolute top-24 md:top-20 lg:top-16 lg:-ml-64">
+        <div className=" absolute top-28 md:top-18 md:mr-80 lg:top-16 lg:ml-16">
           <span className="text-xl sm:text-2xl font-bold text-gray-700">
-            {data.attendance.details.InOffice}%
+            {((data.attendance.details.InOffice)+(data.attendance.details.Halfday)+(data.attendance.details.Workfromhome)+(data.attendance.details.Onleave))/4}%
           </span>
         </div>
 
