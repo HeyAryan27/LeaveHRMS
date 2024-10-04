@@ -14,10 +14,10 @@ export const dashboardData = {
       averageCheckOut: '5:45 PM',
       onTimeArrivalPercentage: 80,
       details: {
-        InOffice: 60,
+        InOffice: 55,
         Halfday: 6,
         Workfromhome: 32,
-        Onleave: 9,
+        Onleave: 19,
       }
     },
   };
