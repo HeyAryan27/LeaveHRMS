@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { FaRegClock } from 'react-icons/fa';
 import { dashboardData } from '../utils/constant'; 
 import MyTeam from './MyTeam';
-import Attendance from './Attendance';
-import AttendanceSummary from './AttendanceSummary';
-import WorkingHistory from './WorkingHistory';
+import MyTeams from './MyTeams';
+import Timing from './Timing';
+import Book from './Book';
 import Totalteam from './Totalteam';
 
 const Dashboard = () => {
@@ -46,7 +46,7 @@ const Dashboard = () => {
       <div className="  flex flex-col md:flex-col lg:flex-row justify-between flex-wrap gap-4 mt-6">
     
         <div className="flex-1 ">
-          <Attendance />
+          <MyTeams />
         </div>
 
       
@@ -54,17 +54,17 @@ const Dashboard = () => {
 
       
         <div className="flex-1">
-          <AttendanceSummary />
+          <Timing />
         </div>
       </div>
       
-      <div className="grid grid-cols-1 lg:grid-cols-2  gap-8 mt-4">
+      <div className="grid grid-cols-1 lg:grid-cols-2  gap-16 mt-4">
         <div className="flex-1">
           <MyTeam />
     
         </div>
         <div className="flex-1 ">
-          <WorkingHistory />  
+          <Book />  
           <Totalteam/>
         </div>
       </div>

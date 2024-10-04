@@ -56,18 +56,27 @@
 .status-circle {
     width: 12px;
     height: 12px;
-    border-radius: 20%;
-    border: 2px solid #007bff;
+    border-radius: 10%;
+    display: inline-block;
 }
-.status-circle.red {
-    border-color: #dc3545;
+
+.status-circle--blue {
+    background-color: blue;
 }
-.status-circle.yellow {
-    border-color: #ffc107;
+
+.status-circle--red {
+    background-color: red;
 }
-.status-circle.cyan {
-    border-color: #17a2b8;
+
+.status-circle--yellow {
+    background-color: yellow;
 }
-.status-circle.gray {
-    border-color: #e9ecef;
+
+.status-circle--gray {
+    background-color: gray;
+}
+@media (min-width: 1024px) {
+    .Box {
+        width: 145%;
+    }
 }

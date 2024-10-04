@@ -5,6 +5,7 @@ export default function ChartsOverviewDemo() {
   // const Atul =  <img alt="Profile picture of Alena Gouse" height="40" src="https://storage.googleapis.com/a1aa/image/ssItUqqvrV5ffEelR9eLu0RrYFGjTEpeLepyLqKKfvwRepfFnA.jpg" width="40"/>
   return (
     <BarChart
+    
       series={[
         { data: [(hours.LastWeek.Atul ),
            (hours.LastWeek.Nitin),

@@ -16,7 +16,7 @@ export const dashboardData = {
       details: {
         InOffice: 60,
         Halfday: 6,
-        Workfromhome: 22,
+        Workfromhome: 32,
         Onleave: 9,
       }
     },
@@ -137,6 +137,34 @@ export const hours = {
     }
     }
   ];
+  export const team1 = [
+    {
+        name: 'Shreya',
+        role: 'UI Designer',
+        profilePicture: 'https://storage.googleapis.com/a1aa/image/ssItUqqvrV5ffEelR9eLu0RrYFGjTEpeLepyLqKKfvwRepfFnA.jpg',
+        status: [, 'blue', 'blue', 'blue', 'blue', 'gray','yellow', 'gray', 'blue', 'blue', 'blue', 'blue', 'gray','yellow', 'gray', 'blue', 'blue', 'blue', 'blue', 'gray'], // Status for Mon-Sun
+    },
+    {
+        name: 'Nitin',
+        role: 'UX Designer',
+        profilePicture: 'https://storage.googleapis.com/a1aa/image/UHtk2mRpjHZWGJGIuEuUzb16aJKUIDXdVQjFMcggBtpf0fiTA.jpg',
+        status: ['red', 'gray', 'blue', 'blue', 'blue', 'blue', 'gray','gray', 'yellow', 'blue', 'blue', 'gray', 'blue', 'blue', 'blue', 'blue', 'blue', 'blue', 'gray'], // Status for Mon-Sun
+    },
+    {
+        name: 'Rahul',
+        role: 'Frontend Developer',
+        profilePicture: 'https://storage.googleapis.com/a1aa/image/UHtk2mRpjHZWGJGIuEuUzb16aJKUIDXdVQjFMcggBtpf0fiTA.jpg',
+        status: ['blue', 'blue', 'gray', 'blue', 'blue', 'yellow', 'gray','red', 'gray', 'blue', 'blue', , 'blue', 'blue', 'blue', 'blue', 'gray','blue', 'blue', 'gray'], // Status for Mon-Sun
+    },
+    {
+        name: 'Priya',
+        role: 'Backend',
+        profilePicture: 'https://storage.googleapis.com/a1aa/image/ssItUqqvrV5ffEelR9eLu0RrYFGjTEpeLepyLqKKfvwRepfFnA.jpg',
+        status: ['gray', 'yellow', , 'blue', 'blue', 'blue', 'blue', 'gray','blue', 'blue', 'gray', 'blue', 'blue','red', 'gray', 'blue', 'blue', 'blue', 'blue', 'gray'], // Status for Mon-Sun
+    }
+];
+
+
   
   
 

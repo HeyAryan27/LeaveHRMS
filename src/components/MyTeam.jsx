@@ -1,347 +1,54 @@
 import React from 'react';
-import { team } from '../utils/constant';
-import "./MyTeam.css"
+import { team1 } from '../utils/constant'; // Ensure this exports the correct data
+import './MyTeam.css';
+
 function MyTeam() {
-    const members = team;
     const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
     return (
-        <div className="bg-white p-4  rounded-lg lg:h-auto shadow-md border-[1px] max-w-4xl mx-auto" style={{ width: "780px" }}>
+        <div className="bg-white p-4 rounded-lg lg:h-auto shadow-md border-[1px] max-w-4xl mx-auto Box">
             <h2 className="font-semibold text-lg mb-4">
-                My Teams
-               
+                My Team
                 <p className="text-xs text-gray-600 mt-2 md:-mt-5">From 1-30 Sep, 2023</p>
             </h2>
-            
 
-            <div className="overflow-x-auto ">
+            <div className="overflow-x-auto">
                 <table className="w-full min-w-full table-auto">
-                    {/* <tbody>
-                        {members.map((member, index) => (
-                            <tr key={index} className="text-gray-700 hover:bg-gray-100 border-b">
-                            
-                                <td className="p-1 text-left flex items-center">
-                                    <img
-                                        src={member.profileImage}
-                                        alt={member.name}
-                                        className="w-8 h-8 rounded-full mr-2"
-                                    />
-                                    <div className="flex flex-col">
-                                        <span className="text-blue-900">{member.name}</span>
-                                        <span className="text-xs text-gray-500">{member.role}</span>
-                                    </div>
-                                </td>
+                    {team1.map((member, index) => (
+                        <div
+                            key={index}
+                            className="team-member border-t border-gray-200 pt-4 flex flex-col md:flex-row items-start md:items-center"
+                        >
+                            <div className="flex items-center">
+                                <img
+                                    alt={`Profile picture of ${member.name}`}
+                                    height="40"
+                                    src={member.profilePicture}
+                                    width="40"
+                                    className="rounded-full"
+                                />
+                                <div className="info ml-4">
+                                    <h4 className="font-semibold">{member.name}</h4>
+                                    <p className="text-sm text-gray-500">{member.role}</p>
+                                </div>
+                            </div>
 
-                            
-                                <td className="flex items-center justify-between space-x-2  w-96 p-2 ml-36 -mt-12    ">
-                                    {days.map((day, idx) => (
-                                        <div key={idx} className="flex flex-col items-center space-y-1">
-                                            
-                                            <span className="text-xs text-gray-500">{day}</span>
-
-                                    
-                                            <span
-                                                className={`w-4 h-4  ${
-                                                    member.status && member.status[day] === 'available'
-                                                        ? 'bg-blue-500'
-                                                        : member.status && member.status[day] === 'unavailable'
-                                                        ? 'bg-red-500'
-                                                        : member.status && member.status[day] === 'yellow'
-                                                        ? 'bg-yellow-500'
-                                                        : 'bg-gray-300'
-                                                }`}
-                                            ></span>
-                                        </div>
-                                    ))}
-                                </td>
-                            </tr>
-                        ))}
-                    </tbody> */}
-                    <div class="border-t border-gray-200 pt-4">
-   
-     <div class="team-member">
-    <img alt="Profile picture of Alena Gouse" height="40" src="https://storage.googleapis.com/a1aa/image/ssItUqqvrV5ffEelR9eLu0RrYFGjTEpeLepyLqKKfvwRepfFnA.jpg" width="40"/>
-    <div class="info">
-     <h4>
-      Shreya
-     </h4>
-     <p>
-      UI Designer 
-     </p>
-    </div>
-    <div class="status">
-     <div class="status-circle yellow">
-     </div>
-     <div class="status-circle gray">
-     </div>
-     <div class="status-circle blue">
-     </div>
-     <div class="status-circle blue">
-     </div>
-     <div class="status-circle blue">
-     </div>
-     <div class="status-circle blue">
-     </div>
-     <div class="status-circle gray">
-     </div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-     <div class="status-circle red">
-     </div>
-     <div class="status-circle gray">
-     </div>
-     <div class="status-circle gray">
-     </div>
-     <div class="status-circle blue">
-     </div>
-     <div class="status-circle blue">
-     </div>
-     <div class="status-circle blue">
-     </div>
-     <div class="status-circle blue">
-     </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-     <div class="status-circle gray">
-     </div>
-     <div class="status-circle yellow">
-     </div>
-     <div class="status-circle gray">
-     </div>
-     <div class="status-circle gray">
-     </div>
-     <div class="status-circle blue">
-     </div>
-     <div class="status-circle blue">
-     </div>
-     <div class="status-circle blue">
-     </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    </div>
-   </div>
-   </div>
-   <div class="team-member">
-    <img alt="Profile picture of Miracle Vetrovs" height="40" src="https://storage.googleapis.com/a1aa/image/UHtk2mRpjHZWGJGIuEuUzb16aJKUIDXdVQjFMcggBtpf0fiTA.jpg" width="40"/>
-    <div class="info">
-     <h4>
-      Nitin
-     </h4>
-     <p>
-      UX Designer
-     </p>
-    </div>
-    <div class="status">
-     <div class="status-circle red">
-     </div>
-     <div class="status-circle gray">
-     </div>
-     <div class="status-circle blue">
-     </div>
-     <div class="status-circle blue">
-     </div>
-     <div class="status-circle blue">
-     </div>
-     <div class="status-circle blue">
-     </div>
-     <div class="status-circle gray">
-     </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-     <div class="status-circle red">
-     </div>
-     <div class="status-circle gray">
-     </div>
-     <div class="status-circle gray">
-     </div>
-     <div class="status-circle blue">
-     </div>
-     <div class="status-circle blue">
-     </div>
-     <div class="status-circle blue">
-     </div>
-     <div class="status-circle blue">
-     </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-     <div class="status-circle gray">
-     </div>
-     <div class="status-circle yellow">
-     </div>
-     <div class="status-circle gray">
-     </div>
-     <div class="status-circle gray">
-     </div>
-     <div class="status-circle blue">
-     </div>
-     <div class="status-circle blue">
-     </div>
-     <div class="status-circle blue">
-     </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    
-    </div>   
-    
-    </div >
-    <div class="team-member">
-    <img alt="Profile picture of Miracle Vetrovs" height="40" src="https://storage.googleapis.com/a1aa/image/UHtk2mRpjHZWGJGIuEuUzb16aJKUIDXdVQjFMcggBtpf0fiTA.jpg" width="40"/>
-    <div class="info">
-     <h4>
-      Rahul
-     </h4>
-     <p>
-      UX Designer 
-     </p>
-    </div>
-    <div class="status">
-     <div class="status-circle blue">
-     </div>
-     <div class="status-circle gray">
-     </div>
-     <div class="status-circle blue">
-     </div>
-     <div class="status-circle blue">
-     </div>
-     <div class="status-circle blue">
-     </div>
-     <div class="status-circle blue">
-     </div>
-     <div class="status-circle gray">
-     </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-     <div class="status-circle red">
-     </div>
-     <div class="status-circle gray">
-     </div>
-     <div class="status-circle gray">
-     </div>
-     <div class="status-circle blue">
-     </div>
-     <div class="status-circle blue">
-     </div>
-     <div class="status-circle blue">
-     </div>
-     <div class="status-circle blue">
-     </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-     <div class="status-circle gray">
-     </div>
-     <div class="status-circle yellow">
-     </div>
-     <div class="status-circle gray">
-     </div>
-     <div class="status-circle gray">
-     </div>
-     <div class="status-circle blue">
-     </div>
-     <div class="status-circle blue">
-     </div>
-     <div class="status-circle blue">
-     </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-     
-    </div>
-    </div>
-    <div class="team-member">
-    <img alt="Profile picture of Miracle Vetrovs" height="40" src="https://storage.googleapis.com/a1aa/image/UHtk2mRpjHZWGJGIuEuUzb16aJKUIDXdVQjFMcggBtpf0fiTA.jpg" width="40"/>
-    <div class="info">
-     <h4>
-      Golu
-     </h4>
-     <p>
-      UX Designer 
-     </p>
-    </div>
-    <div class="status">
-     <div class="status-circle red">
-     </div>
-     <div class="status-circle gray">
-     </div>
-     <div class="status-circle blue">
-     </div>
-     <div class="status-circle blue">
-     </div>
-     <div class="status-circle blue">
-     </div>
-     <div class="status-circle blue">
-     </div>
-     <div class="status-circle gray">
-     </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-     <div class="status-circle red">
-     </div>
-     <div class="status-circle gray">
-     </div>
-     <div class="status-circle gray">
-     </div>
-     <div class="status-circle blue">
-     </div>
-     <div class="status-circle blue">
-     </div>
-     <div class="status-circle blue">
-     </div>
-     <div class="status-circle blue">
-     </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-     <div class="status-circle gray">
-     </div>
-     <div class="status-circle yellow">
-     </div>
-     <div class="status-circle gray">
-     </div>
-     <div class="status-circle gray">
-     </div>
-     <div class="status-circle blue">
-     </div>
-     <div class="status-circle blue">
-     </div>
-     <div class="status-circle blue">
-     </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-     
-    </div>
-    </div>
-    <div class="team-member">
-    <img alt="Profile picture of Miracle Vetrovs" height="40" src="https://storage.googleapis.com/a1aa/image/UHtk2mRpjHZWGJGIuEuUzb16aJKUIDXdVQjFMcggBtpf0fiTA.jpg" width="40"/>
-    <div class="info">
-     <h4>
-      Kaku
-     </h4>
-     <p>
-      UX Designer
-     </p>
-    </div>
-    <div class="status">
-     <div class="status-circle gray">
-     </div>
-     <div class="status-circle gray">
-     </div>
-     <div class="status-circle blue">
-     </div>
-     <div class="status-circle blue">
-     </div>
-     <div class="status-circle blue">
-     </div>
-     <div class="status-circle blue">
-     </div>
-     <div class="status-circle gray">
-     </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-     <div class="status-circle red">
-     </div>
-     <div class="status-circle gray">
-     </div>
-     <div class="status-circle gray">
-     </div>
-     <div class="status-circle blue">
-     </div>
-     <div class="status-circle blue">
-     </div>
-     <div class="status-circle blue">
-     </div>
-     <div class="status-circle blue">
-     </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-     <div class="status-circle gray">
-     </div>
-     <div class="status-circle yellow">
-     </div>
-     <div class="status-circle gray">
-     </div>
-     <div class="status-circle gray">
-     </div>
-     <div class="status-circle blue">
-     </div>
-     <div class="status-circle blue">
-     </div>
-     <div class="status-circle blue">
-     </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-     
-
-    </div>
-    </div>
-     
+                            <div className="status ml-0 md:ml-auto flex flex-wrap mt-2 md:mt-0">
+                                {/* Safe check for array */}
+                                {Array.isArray(member.status) ? (
+                                    member.status.map((status, dayIndex) => (
+                                        <div
+                                            key={dayIndex}
+                                            className={`status-circle status-circle--${status.toLowerCase()} mx-1`}
+                                            title={`${days[dayIndex]}: ${status}`}
+                                        ></div>
+                                    ))
+                                ) : (
+                                    <p className="text-red-500">Invalid status data</p>
+                                )}
+                            </div>
+                        </div>
+                    ))}
                 </table>
             </div>
         </div>
