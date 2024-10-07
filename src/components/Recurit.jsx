@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 // import PostedJobs from './PostedJobs';
 import "../_styles/index.scss";
 // import InterviewMeetingInfo from './InterviewMeetingInfo';
@@ -6,10 +6,10 @@ import "../_styles/index.scss";
 const Recurit = () => {
   return (
     <div className="p-4 shadow mb-4 bg-white">
-        {/* <PostedJobs/> */}
-        {/* <InterviewMeetingInfo/> */}
+      {/* <PostedJobs/> */}
+      {/* <InterviewMeetingInfo/> */}
     </div>
-  )
-}
+  );
+};
 
 export default Recurit;
