@@ -11,7 +11,7 @@ function Book() {
   };
 
   return (
-    <div className="bg-white  p-3 h-auto  md:h-56 rounded-lg  shadow-md lg:ml-52  border-[1px]">
+    <div className="bg-white   p-3 h-auto  md:h-56 rounded-lg  shadow-md lg:ml-52  border-[1px]">
       <div className="flex flex-col md:flex-row justify-between items-start mb-1">
         <div className="mb-4 md:mb-0">
           <h2 className="font-semibold text-lg sm:text-center md:text-left">

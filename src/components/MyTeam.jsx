@@ -34,7 +34,7 @@ function MyTeam() {
                 </div>
               </div>
 
-              <div className="status ml-0 md:ml-auto flex flex-wrap mt-2 md:mt-0">
+              <div className="status ml-0 md:ml-auto flex flex-wrap mt-2  md:mt-0">
                 {Array.isArray(member.status) ? (
                   member.status.map((status, dayIndex) => (
                     <div
