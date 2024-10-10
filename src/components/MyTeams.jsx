@@ -2,59 +2,60 @@ import { dashboardData } from "../utils/constant";
 import * as React from "react";
 import { PieChart, Pie, Cell } from "recharts";
 
-const COLORS = ["#0088FE", "#f00", "#FFBB28", "#a9a9a9"];
+const COLORS = ["#0088FE", "#FFBB28", "#f00", "#a9a9a9"];
+const ATTENDANCE_TYPES = {
+  IN_OFFICE: 'In Office',
+  HALF_DAY: 'Half Day',
+  WORK_FROM_HOME: 'Work from Home',
+  ON_LEAVE: 'On Leave',
+};
 
 const MyTeams = () => {
-  const data = dashboardData;
+  const { InOffice, Workfromhome, Halfday, Onleave } = dashboardData.attendance.details;
+  
   const data1 = [
-    { value: data.attendance.details.InOffice },
-    { value: data.attendance.details.Workfromhome },
-    { value: data.attendance.details.Halfday },
-    { value: data.attendance.details.Onleave },
+    { name: ATTENDANCE_TYPES.IN_OFFICE, value: InOffice },
+    { name: ATTENDANCE_TYPES.WORK_FROM_HOME, value: Workfromhome },
+    { name: ATTENDANCE_TYPES.HALF_DAY, value: Halfday },
+    { name: ATTENDANCE_TYPES.ON_LEAVE, value: Onleave },
   ];
 
+  const totalAttendance = InOffice + Workfromhome + Halfday + Onleave;
+  const attendancePercentage = totalAttendance / data1.length;
+
   return (
-    <div className="col-span-1 w-full bg-white p-4 sm:p-6 rounded-lg shadow-md border-[1px] lg:h-80 lg:w-auto">
-      <div className="flex justify-between items-center mb-4">
-        <h2 className="font-semibold text-base sm:text-lg">
+    <div className="col-span-1 w-full bg-white p-2 sm:p-4 md:p-6 rounded-lg shadow-md border-[1px] lg:h-80 lg:w-auto">
+      <div className="flex flex-col sm:flex-row justify-between items-center mb-2 sm:mb-4">
+        <h2 className="font-semibold text-sm sm:text-base md:text-lg">
           My Teams
-          <p className="text-xs text-gray-600 mt-1 sm:mt-2">
-            From 4-10 Sept, 2023
-          </p>
+          <p className="text-xs text-gray-600 mt-1 sm:mt-2">From 4-10 Sept, 2023</p>
         </h2>
       </div>
 
-      {/* Flexbox for pie chart and details */}
-      <div className="relative flex flex-col lg:flex-row items-center justify-center lg:justify-between lg:h-full">
+      <div className="relative flex flex-col lg:mt-8 lg:flex-row items-center justify-center lg:justify-between lg:h-full">
         <div className="flex justify-center lg:justify-start">
-          <PieChart className="lg:mb-28" width={250} height={250}>
+          <PieChart className="lg:mb-28 " width={150} height={150}>
             <Pie
               data={data1}
               cx="50%"
               cy="50%"
-              innerRadius={60}
-              outerRadius={90}
-              fill="#8884d8"
+              innerRadius={40}
+              outerRadius={60}
               paddingAngle={0}
               dataKey="value"
               startAngle={-270}
               endAngle={-630}
             >
               {data1.map((entry, index) => (
-                <Cell
-                  key={`cell-${index}`}
-                  fill={COLORS[index % COLORS.length]}
-                />
+                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
               ))}
             </Pie>
-
             <Pie
               data={data1}
               cx="50%"
               cy="50%"
-              innerRadius={90}
-              outerRadius={103}
-              fill="#8884d8"
+              innerRadius={60}
+              outerRadius={73}
               paddingAngle={0}
               dataKey="value"
               startAngle={-270}
@@ -67,38 +68,31 @@ const MyTeams = () => {
           </PieChart>
         </div>
 
-        {/* Percentage display */}
-        <div className="absolute top-28 lg:top-16 lg:left-24">
-          <span className="text-xl sm:text-2xl font-bold text-gray-700">
-            {(data.attendance.details.InOffice +
-              data.attendance.details.Halfday +
-              data.attendance.details.Workfromhome +
-              data.attendance.details.Onleave) /
-              4}
-            %
+        <div className="absolute top-16 lg:top-20 lg:left-12">
+          <span className="text-lg sm:text-xl md:text-2xl font-bold text-gray-700">
+            {attendancePercentage}%
           </span>
         </div>
 
-        {/* Attendance details */}
-        <div className="mt-8 lg:mt-0 grid grid-cols-1 lg:grid-cols-2 lg:w-auto lg:mb-2 lg:h-full lg:justify-between">
-          <ul className="text-sm font-bold space-y-2">
+        <div className="mt-4 lg:mt-0 grid grid-cols-1 lg:grid-cols-2 lg:w-auto lg:mb-2 lg:h-full lg:justify-between">
+          <ul className="text-xs sm:text-sm font-bold space-y-1">
             <li className="flex items-center">
-              <span className="w-4 h-4 rounded-full bg-blue-500 mr-2 lg:h-16"></span>
-              In Office: {data.attendance.details.InOffice}%
+              <span className="w-3 h-3 rounded-full bg-blue-500 mr-1 lg:h-16"></span>
+              {ATTENDANCE_TYPES.IN_OFFICE}: {InOffice}%
             </li>
             <li className="flex items-center">
-              <span className="w-4 h-4 rounded-full bg-yellow-500 mr-2 lg:h-16"></span>
-              Half Day: {data.attendance.details.Halfday}%
+              <span className="w-3 h-3 rounded-full bg-yellow-500 mr-1 lg:h-16"></span>
+              {ATTENDANCE_TYPES.HALF_DAY}: {Halfday}%
             </li>
           </ul>
-          <ul className="text-sm font-bold space-y-2">
+          <ul className="text-xs sm:text-sm font-bold space-y-1">
             <li className="flex items-center">
-              <span className="w-5 h-4 rounded-full bg-red-500 mr-2 lg:h-16"></span>
-              Work from Home: {data.attendance.details.Workfromhome}%
+              <span className="w-3 h-3 rounded-full bg-red-500 mr-1 lg:h-16"></span>
+              {ATTENDANCE_TYPES.WORK_FROM_HOME}: {Workfromhome}%
             </li>
             <li className="flex items-center">
-              <span className="w-4 h-4 rounded-full bg-gray-500 mr-2 lg:h-16"></span>
-              On Leave: {data.attendance.details.Onleave}%
+              <span className="w-3 h-3 rounded-full bg-gray-500 mr-1 lg:h-16"></span>
+              {ATTENDANCE_TYPES.ON_LEAVE}: {Onleave}%
             </li>
           </ul>
         </div>
